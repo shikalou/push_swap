@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:54:14 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/24 16:32:28 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/03/29 15:18:50 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(int argc, char **argv)
 {
 	int		argc_f;
 	char	**argv_f;
+	t_tabs	*ratatab;
+	int		i = 0;
 
 	argv_f = argv + 1;
 	argc_f = argc - 1;
@@ -41,7 +43,12 @@ int	main(int argc, char **argv)
 		ft_putendl_fd("Error", 2);
 		return (1);
 	}
-	printf("yohoho\n");
+	ratatab = ft_init_struct(argc_f, argv_f);
+	while (i < argc_f)
+	{
+		printf("tab_a[%d] = %d\n", i, ratatab->tab_a[i]);
+		i++;
+	}
 	if (argc == 2)
 		ft_free(argv_f, argc_f);
 	return (0);
