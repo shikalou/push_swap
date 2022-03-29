@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:52:40 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/29 15:19:18 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/03/29 17:51:52 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_tabs	*ft_init_struct(int argc_f, char **argv_f)
 
 	ratatab = malloc(sizeof(t_tabs));
 	ratatab->tab_a = ft_fill_tab_a(argc_f, argv_f);
+	ratatab->len_a = argc_f;
 	ratatab->tab_b = malloc(sizeof(int) * argc_f);
+	ratatab->len_b = 0;
 	return (ratatab);
 }
