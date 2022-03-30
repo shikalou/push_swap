@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:54:14 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/29 18:36:03 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/03/30 17:50:05 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_get_tablen(char **tab)
+int	ft_get_argc_f(char **tab)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		argv_f = ft_split(argv[1], ' ');
-		argc_f = ft_get_tablen(argv_f);
+		argc_f = ft_get_argc_f(argv_f);
 	}
 	if (!ft_check_args(argc_f, argv_f))
 	{
@@ -70,10 +70,8 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	if (tab_is_sorted(ratatab))
-	{
-		printf("c'est sorted\n");
 		ft_free_struct(ratatab);
-	}
-	
+	if (argc_f == 3)
+		ft_sort3(ratatab);
 	return (0);
 }

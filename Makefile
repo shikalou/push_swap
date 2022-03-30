@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 13:53:28 by ldinaut           #+#    #+#              #
-#    Updated: 2022/03/29 18:31:41 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/03/30 17:26:02 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME	=	push_swap
 SRCS	=	srcs/push_swap.c \
 			srcs/check_args.c \
 			srcs/ft_init_struct.c \
-			srcs/ft_free.c
+			srcs/ft_free.c \
+			srcs/operations.c \
+			srcs/operations2.c
 
 CC		=	clang
 
