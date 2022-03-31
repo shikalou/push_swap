@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 14:45:54 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/30 17:26:38 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/03/31 13:09:46 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ void	pa(t_tabs *ratatab)
 	}
 	i = 0;
 	ratatab->tab_a[i] = ratatab->tab_b[i];
+	ratatab->len_b--;
 	while (i < ratatab->len_b)
 	{
 		ratatab->tab_b[i] = ratatab->tab_b[i + 1];
 		i++;
 	}
 	ratatab->len_a++;
-	ratatab->len_b--;
 }
 
 void	pb(t_tabs *ratatab)
@@ -83,11 +83,11 @@ void	pb(t_tabs *ratatab)
 	}
 	i = 0;
 	ratatab->tab_b[i] = ratatab->tab_a[i];
+	ratatab->len_a--;
 	while (i < ratatab->len_a)
 	{
 		ratatab->tab_a[i] = ratatab->tab_a[i + 1];
 		i++;
 	}
-	ratatab->len_a--;
 	ratatab->len_b++;
 }
