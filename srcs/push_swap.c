@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:54:14 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/31 18:21:17 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/04/01 19:30:15 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int	main(int argc, char **argv)
 	int		argc_f;
 	char	**argv_f;
 	t_tabs	*ratatab;
-	int		i = 0;
-	int		j = 0;
 
 	argv_f = argv + 1;
 	argc_f = argc - 1;
@@ -65,11 +63,6 @@ int	main(int argc, char **argv)
 	ratatab = ft_init_struct(argc_f, argv_f);
 	if (argc == 2)
 		ft_free(argv_f, argc_f);
-	while (i < argc_f)
-	{
-		printf("tab_a[%d] = %d\n", i, ratatab->tab_a[i]);
-		i++;
-	}
 	if (tab_is_sorted(ratatab))
 	{
 		ft_free_struct(ratatab);
@@ -81,18 +74,8 @@ int	main(int argc, char **argv)
 		ft_sort3(ratatab);
 	else if (argc_f < 6)
 		ft_sort5(ratatab, argc_f);
-	while (j < ratatab->len_b)
-	{
-		printf("tab_b[%d] = %d\n", j, ratatab->tab_b[j]);
-		j++;
-	}
-	i = 0;
-	printf("\n");
-	while (i < ratatab->len_a)
-	{
-		printf("tab_a[%d] = %d\n", i, ratatab->tab_a[i]);
-		i++;
-	}
+	else
+		ft_radix(ratatab);
 	ft_free_struct(ratatab);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:20:33 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/31 17:51:23 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/04/01 19:08:12 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,24 @@ int	ft_find_min(t_tabs *rata)
 		i++;
 	}
 	return (j_p);
+}
+
+int	ft_find_max(t_tabs *rata)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = rata->tab_a[0];
+	while (i < rata->len_a)
+	{
+		if (j < rata->tab_a[i])
+		{
+			j = rata->tab_a[i];
+		}
+		i++;
+	}
+	return (j);
 }
 
 void	sort_n_pb(t_tabs *rata)

@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 13:53:28 by ldinaut           #+#    #+#              #
-#    Updated: 2022/03/31 16:21:48 by ldinaut          ###   ########.fr        #
+#    Updated: 2022/04/01 14:12:07 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS	=	srcs/push_swap.c \
 			srcs/operations.c \
 			srcs/operations2.c \
 			srcs/sort_3.c \
-			srcs/sort_5.c
+			srcs/sort_5.c \
+			srcs/radix.c
 
 CC		=	clang
 

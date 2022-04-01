@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:51:57 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/03/24 16:32:14 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/04/01 19:34:09 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,23 +79,28 @@ int	ft_check_args(int argc, char **argv)
 	int			i;
 	int			j;
 	long int	nb;
-	int			tab[argc];
+	int			*tab;
 
-	i = 0;
-	j = 0;
+	i = -1;
+	j = -1;
+	tab = malloc(sizeof(int) * argc);
+	if (!tab)
+		return (0);
 	ft_bzero(tab, argc * 4);
-	while (argv[i])
+	while (argv[++i])
 	{
 		if (!ft_check_num(argv[i]))
 			return (0);
 		nb = ft_atol(argv[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 			return (0);
-		tab[j] = nb;
-		j++;
-		i++;
+		tab[++j] = nb;
 	}
 	if (!ft_check_double(tab, argc))
+	{
+		free(tab);
 		return (0);
+	}
+	free(tab);
 	return (1);
 }
