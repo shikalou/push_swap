@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:51:57 by ldinaut           #+#    #+#             */
-/*   Updated: 2022/04/01 19:34:09 by ldinaut          ###   ########.fr       */
+/*   Updated: 2022/04/04 17:43:48 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,14 @@ int	ft_check_num(char *num)
 	return (1);
 }
 
-int	ft_check_args(int argc, char **argv)
+int	ft_all_check_num(int *tab, char **argv)
 {
 	int			i;
 	int			j;
 	long int	nb;
-	int			*tab;
 
-	i = -1;
 	j = -1;
-	tab = malloc(sizeof(int) * argc);
-	if (!tab)
-		return (0);
-	ft_bzero(tab, argc * 4);
+	i = -1;
 	while (argv[++i])
 	{
 		if (!ft_check_num(argv[i]))
@@ -95,6 +90,21 @@ int	ft_check_args(int argc, char **argv)
 		if (nb > 2147483647 || nb < -2147483648)
 			return (0);
 		tab[++j] = nb;
+	}
+	return (1);
+}
+
+int	ft_check_args(int argc, char **argv)
+{
+	int			*tab;
+
+	tab = malloc(sizeof(int) * argc);
+	if (!tab)
+		return (0);
+	if (!ft_all_check_num(tab, argv))
+	{
+		free(tab);
+		return (0);
 	}
 	if (!ft_check_double(tab, argc))
 	{
