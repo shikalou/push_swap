@@ -21,7 +21,7 @@ You have at your disposal a set of integer values, 2 stacks (stack a and stack b
 
 I chose to use the "radix" sorting algorithm. In this sort, there is digit by digit sorting which start from the least significant digit to the most significant digit, distributing each elements into buckets accordingly.
 
-Since we only have two buckets, we can use this algorithm by sorting our integers using their binary value. It's an efficient algorithm which taught me to use the bitwise operator and to manipulate right bit-shifting and binary value.
+Since we only have two stacks, we can use this algorithm by sorting our integers using their binary value. It's an efficient algorithm which taught me to use the bitwise operator and to manipulate right bit-shifting and binary value.
 ### How to run the program 
 
 Clone the project
