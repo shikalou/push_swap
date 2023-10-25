@@ -53,7 +53,8 @@ put each value in separate parameters
 
 ``./push_swap 65 7 23 90 44``
 
-![push_swap_screenshot](https://github.com/shikalou/push_swap/assets/94800038/8909b767-f454-4eb0-a5dd-61665330fc33)
+![push_swap_screenshot](https://github.com/shikalou/push_swap/assets/94800038/7d471640-6795-4b68-a6e3-78b8ed53a9cc)
+
 
 ### Documentation
 
